@@ -1,5 +1,5 @@
 {
-  "name": "gifted-pathway-app",
+  "name": "gifted-pathway-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
