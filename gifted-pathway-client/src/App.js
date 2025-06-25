@@ -1,16 +1,22 @@
 
 import React, { useState } from 'react';
+import './App.css';
 import { questions, results } from './questions';
+import HomePage from './HomePage';
 
 function App() {
+  const [quizStarted, setQuizStarted] = useState(false);
   const [history, setHistory] = useState([0]);
   const [answers, setAnswers] = useState([]);
 
   const currentQuestionId = history[history.length - 1];
 
+  const handleStart = () => {
+    setQuizStarted(true);
+  };
+
   const handleAnswer = (answer) => {
     const newAnswers = [...answers];
-    // If we are revisiting a question, remove subsequent answers
     if (history.length < answers.length + 1) {
         newAnswers.splice(history.length - 1);
     }
@@ -32,16 +38,28 @@ function App() {
     }
   };
 
+  const handleStartOver = () => {
+    setQuizStarted(false);
+    setHistory([0]);
+    setAnswers([]);
+  }
+
   const renderContent = () => {
+    if (!quizStarted) {
+        return <HomePage onStart={handleStart} />
+    }
+
     if (typeof currentQuestionId === 'string' && currentQuestionId.startsWith('RESULT_')) {
       const result = results[currentQuestionId];
       return (
         <div>
           <h2>{result.title}</h2>
-          <ul>
+          <ul className='result-criteria'>
             {result.criteria.map((item, index) => <li key={index}>{item}</li>)}
           </ul>
-          <button onClick={() => setHistory([0])}>Start Over</button>
+          <div>
+            <button onClick={handleStartOver}>Start Over</button>
+          </div>
         </div>
       );
     }
@@ -65,7 +83,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Gifted Pathways</h1>
       {renderContent()}
     </div>
   );
