@@ -1,3 +1,4 @@
+
 const questions = [
     {
         id: 0,
@@ -153,30 +154,30 @@ const questions = [
 ];
 
 const results = {
-    "RESULT_ACCESS_HGT_GIA_1": { title: "ACCESS HGT GIA: 1", criteria: ["2 or more ACCESS scores", "1 Cognitive score (95th+)"] },
-    "RESULT_ACCESS_HGT_GIA_2": { title: "ACCESS HGT GIA: 2", criteria: ["1 ACCESS score", "1 Cognitive score (95th+)", "Anecdotal data indicating giftedness"] },
-    "RESULT_ACCESS_HGT_GIA_3": { title: "ACCESS HGT GIA: 3", criteria: ["1 ACCESS score", "1 Cognitive score (95th+)", "1 Observation score"] },
-    "RESULT_ACCESS_HGT_GIA_4": { title: "ACCESS HGT GIA: 4", criteria: ["1 ACCESS score", "1 Cognitive score (95th+)", "1 Achievement score"] },
-    "RESULT_ACCESS_GT_GIA_1": { title: "ACCESS GT GIA: 1", criteria: ["1 ACCESS score", "1 Achievement score", "1 Observation score (in different academic area than achievement score)"] },
-    "RESULT_ACCESS_GT_GIA_2": { title: "ACCESS GT GIA: 2", criteria: ["1 ACCESS score", "1 Observation score (in GIA or academic area)", "Anecdotal data indicating giftedness"] },
-    "RESULT_ACCESS_GT_GIA_3": { title: "ACCESS GT GIA: 3", criteria: ["1 ACCESS score", "2 Achievement scores (in different academic areas)"] },
-    "RESULT_ACCESS_GT_GIA_4": { title: "ACCESS GT GIA: 4", criteria: ["2 or more ACCESS scores", "Anecdotal data indicating giftedness"] },
-    "RESULT_ACCESS_GT_STRENGTH_1": { title: "ACCESS GT with Strength Area: 1", criteria: ["1 ACCESS score", "1 Observation score in an academic area", "1 Achievement score in same academic area as observation score"] },
-    "RESULT_ACCESS_GT_STRENGTH_2": { title: "ACCESS GT with Strength Area: 2", criteria: ["1 ACCESS score", "2 Achievement scores in same academic area"] },
-    "RESULT_HGT_GIA_1": { title: "HGT GIA: 1", criteria: ["2 Cognitive scores (95th+)", "Anecdotal data indicating giftedness"] },
-    "RESULT_HGT_GIA_2": { title: "HGT GIA: 2", criteria: ["1 Cognitive score (95th+)", "1 Achievement score", "Anecdotal data indicating giftedness"] },
-    "RESULT_HGT_GIA_3": { title: "HGT GIA: 3", criteria: ["1 Cognitive score (95th+)", "1 Observation score", "Anecdotal data indicating giftedness"] },
-    "RESULT_HGT_GIA_4": { title: "HGT GIA: 4", criteria: ["1 Cognitive score (95th+)", "2 Achievement scores in different academic areas"] },
-    "RESULT_HGT_GIA_5": { title: "HGT GIA: 5", criteria: ["1 Cognitive score (95th+)", "1 Achievement score", "1 Observation score in a different academic area than the achievement score"] },
-    "RESULT_HGT_STRENGTH_1": { title: "HGT with Strength Area: 1", criteria: ["1 Cognitive score (95th+)", "1 Observation score in an academic area", "1 Achievement score in same academic area as observation score"] },
-    "RESULT_HGT_STRENGTH_2": { title: "HGT with Strength Area: 2", criteria: ["1 Cognitive score (95th+)", "2 Achievements scores in same academic area"] },
-    "RESULT_GT_GIA_1": { title: "GT GIA: 1", criteria: ["2 Achievement scores (in different academic areas)", "Anecdotal data indicating giftedness"] },
-    "RESULT_GT_GIA_2": { title: "GT GIA: 2", criteria: ["1 Achievement score", "1 Observation score (in different academic area than achievement score)", "Anecdotal data indicating giftedness"] },
-    "RESULT_GT_STRENGTH_1": { title: "GT with Strength Area: 1", criteria: ["1 Observation score in an academic area", "2 Achievement test scores in the same strength area"] },
-    "RESULT_GT_STRENGTH_2": { title: "GT with Strength Area: 2", criteria: ["3 Achievement test scores (must be from at least two different assessments in the same academic domain)"] },
-    "RESULT_GT_STRENGTH_3": { title: "GT with Strength Area: 3", criteria: ["1 Observation score in an academic area", "1 Achievement score in same academic area as observation score", "Anecdotal data indicating giftedness"] },
-    "RESULT_GT_STRENGTH_4": { title: "GT with Strength Area: 4", criteria: ["2 Achievement scores in same academic area", "Anecdotal data indicating giftedness"] },
-    "RESULT_INCONCLUSIVE_NEEDS_ANECDOTAL": { title: "Inconclusive", criteria: ["The pathway could not be determined. The selected criteria often require anecdotal data to support identification."] }
+    "RESULT_ACCESS_HGT_GIA_1": { pathway: "HGT GIA Pathways with ACCESS", title: "ACCESS HGT GIA: 1", criteria: ["2 or more ACCESS scores", "1 Cognitive score (95th+)"] },
+    "RESULT_ACCESS_HGT_GIA_2": { pathway: "HGT GIA Pathways with ACCESS", title: "ACCESS HGT GIA: 2", criteria: ["1 ACCESS score", "1 Cognitive score (95th+)", "Anecdotal data indicating giftedness"] },
+    "RESULT_ACCESS_HGT_GIA_3": { pathway: "HGT GIA Pathways with ACCESS", title: "ACCESS HGT GIA: 3", criteria: ["1 ACCESS score", "1 Cognitive score (95th+)", "1 Observation score"] },
+    "RESULT_ACCESS_HGT_GIA_4": { pathway: "HGT GIA Pathways with ACCESS", title: "ACCESS HGT GIA: 4", criteria: ["1 ACCESS score", "1 Cognitive score (95th+)", "1 Achievement score"] },
+    "RESULT_ACCESS_GT_GIA_1": { pathway: "GT GIA Pathways with ACCESS", title: "ACCESS GT GIA: 1", criteria: ["1 ACCESS score", "1 Achievement score", "1 Observation score (in different academic area than achievement score)"] },
+    "RESULT_ACCESS_GT_GIA_2": { pathway: "GT GIA Pathways with ACCESS", title: "ACCESS GT GIA: 2", criteria: ["1 ACCESS score", "1 Observation score (in GIA or academic area)", "Anecdotal data indicating giftedness"] },
+    "RESULT_ACCESS_GT_GIA_3": { pathway: "GT GIA Pathways with ACCESS", title: "ACCESS GT GIA: 3", criteria: ["1 ACCESS score", "2 Achievement scores (in different academic areas)"] },
+    "RESULT_ACCESS_GT_GIA_4": { pathway: "GT GIA Pathways with ACCESS", title: "ACCESS GT GIA: 4", criteria: ["2 or more ACCESS scores", "Anecdotal data indicating giftedness"] },
+    "RESULT_ACCESS_GT_STRENGTH_1": { pathway: "GT with a Strength Area and with ACCESS Pathways", title: "ACCESS GT with Strength Area: 1", criteria: ["1 ACCESS score", "1 Observation score in an academic area", "1 Achievement score in same academic area as observation score"] },
+    "RESULT_ACCESS_GT_STRENGTH_2": { pathway: "GT with a Strength Area and with ACCESS Pathways", title: "ACCESS GT with Strength Area: 2", criteria: ["1 ACCESS score", "2 Achievement scores in same academic area"] },
+    "RESULT_HGT_GIA_1": { pathway: "HGT GIA Pathways without ACCESS", title: "HGT GIA: 1", criteria: ["2 Cognitive scores (95th+)", "Anecdotal data indicating giftedness"] },
+    "RESULT_HGT_GIA_2": { pathway: "HGT GIA Pathways without ACCESS", title: "HGT GIA: 2", criteria: ["1 Cognitive score (95th+)", "1 Achievement score", "Anecdotal data indicating giftedness"] },
+    "RESULT_HGT_GIA_3": { pathway: "HGT GIA Pathways without ACCESS", title: "HGT GIA: 3", criteria: ["1 Cognitive score (95th+)", "1 Observation score", "Anecdotal data indicating giftedness"] },
+    "RESULT_HGT_GIA_4": { pathway: "HGT GIA Pathways without ACCESS", title: "HGT GIA: 4", criteria: ["1 Cognitive score (95th+)", "2 Achievement scores in different academic areas"] },
+    "RESULT_HGT_GIA_5": { pathway: "HGT GIA Pathways without ACCESS", title: "HGT GIA: 5", criteria: ["1 Cognitive score (95th+)", "1 Achievement score", "1 Observation score in a different academic area than the achievement score"] },
+    "RESULT_HGT_STRENGTH_1": { pathway: "HGT with a Strength Area and without ACCESS Pathways", title: "HGT with Strength Area: 1", criteria: ["1 Cognitive score (95th+)", "1 Observation score in an academic area", "1 Achievement score in same academic area as observation score"] },
+    "RESULT_HGT_STRENGTH_2": { pathway: "HGT with a Strength Area and without ACCESS Pathways", title: "HGT with Strength Area: 2", criteria: ["1 Cognitive score (95th+)", "2 Achievements scores in same academic area"] },
+    "RESULT_GT_GIA_1": { pathway: "GT GIA Pathways without ACCESS", title: "GT GIA: 1", criteria: ["2 Achievement scores (in different academic areas)", "Anecdotal data indicating giftedness"] },
+    "RESULT_GT_GIA_2": { pathway: "GT GIA Pathways without ACCESS", title: "GT GIA: 2", criteria: ["1 Achievement score", "1 Observation score (in different academic area than achievement score)", "Anecdotal data indicating giftedness"] },
+    "RESULT_GT_STRENGTH_1": { pathway: "GT with a Strength Area and without ACCESS Pathways", title: "GT with Strength Area: 1", criteria: ["1 Observation score in an academic area", "2 Achievement test scores in the same strength area"] },
+    "RESULT_GT_STRENGTH_2": { pathway: "GT with a Strength Area and without ACCESS Pathways", title: "GT with Strength Area: 2", criteria: ["3 Achievement test scores (must be from at least two different assessments in the same academic domain)"] },
+    "RESULT_GT_STRENGTH_3": { pathway: "GT with a Strength Area and without ACCESS Pathways", title: "GT with Strength Area: 3", criteria: ["1 Observation score in an academic area", "1 Achievement score in same academic area as observation score", "Anecdotal data indicating giftedness"] },
+    "RESULT_GT_STRENGTH_4": { pathway: "GT with a Strength Area and without ACCESS Pathways", title: "GT with Strength Area: 4", criteria: ["2 Achievement scores in same academic area", "Anecdotal data indicating giftedness"] },
+    "RESULT_INCONCLUSIVE_NEEDS_ANECDOTAL": { pathway: "Inconclusive", title: "Inconclusive", criteria: ["The pathway could not be determined. The selected criteria often require anecdotal data to support identification."] }
 };
 
 export { questions, results };

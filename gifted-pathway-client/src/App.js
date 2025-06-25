@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import './App.css';
 import { questions, results } from './questions';
@@ -53,6 +52,7 @@ function App() {
       const result = results[currentQuestionId];
       return (
         <div>
+          <h1>{result.pathway}</h1>
           <h2>{result.title}</h2>
           <ul className='result-criteria'>
             {result.criteria.map((item, index) => <li key={index}>{item}</li>)}
