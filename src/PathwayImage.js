@@ -6,11 +6,18 @@ const PathwayImage = ({ pathway }) => {
     return null;
   }
 
-  const imagePath = `/pathway_images/${pathway}.png`;
+  let imageSrc;
+  try {
+    // Dynamically require the image from src/assets/pathway_images
+    imageSrc = require(`/src/assets/pathway_images/${pathway}.png`);
+  } catch (error) {
+    console.warn(`Image not found for pathway: ${pathway}. Error:`, error);
+    return null; // Or return a placeholder image/component
+  }
 
   return (
     <div className="pathway-image-container">
-      <img src={imagePath} alt={`Pathway ${pathway}`} className="pathway-image" />
+      <img src={imageSrc} alt={`Pathway ${pathway}`} className="pathway-image" />
     </div>
   );
 };
