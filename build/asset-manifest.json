@@ -1,13 +1,36 @@
 {
   "files": {
     "main.css": "/gifted-pathway-app/static/css/main.76abcefe.css",
-    "main.js": "/gifted-pathway-app/static/js/main.efb44eb0.js",
+    "main.js": "/gifted-pathway-app/static/js/main.dcfac62b.js",
+    "static/media/GT_GIA_2.png": "/gifted-pathway-app/static/media/GT_GIA_2.c09013235e4e5689629e.png",
+    "static/media/HGT_GIA_1.png": "/gifted-pathway-app/static/media/HGT_GIA_1.e007c5a8887088fb805c.png",
+    "static/media/ACCESS_GT_GIA_1.png": "/gifted-pathway-app/static/media/ACCESS_GT_GIA_1.28fc4619d0f6dc616f15.png",
+    "static/media/GT_STRENGTH_3.png": "/gifted-pathway-app/static/media/GT_STRENGTH_3.4e7376750666fed5f4ac.png",
+    "static/media/ACCESS_GT_STRENGTH_1.png": "/gifted-pathway-app/static/media/ACCESS_GT_STRENGTH_1.88c8441d1113b876265b.png",
+    "static/media/GT_STRENGTH_1.png": "/gifted-pathway-app/static/media/GT_STRENGTH_1.6b30e55715e5b6b171a6.png",
+    "static/media/ACCESS_GT_GIA_2.png": "/gifted-pathway-app/static/media/ACCESS_GT_GIA_2.d620f31b3b740373ca7f.png",
+    "static/media/HGT_STRENGTH_1.png": "/gifted-pathway-app/static/media/HGT_STRENGTH_1.a41c53f1e50bb312abfe.png",
+    "static/media/GT_GIA_1.png": "/gifted-pathway-app/static/media/GT_GIA_1.b49910e3d9bf66d41c1e.png",
+    "static/media/HGT_GIA_5.png": "/gifted-pathway-app/static/media/HGT_GIA_5.a02bfdaf5a8cb634573f.png",
+    "static/media/GT_STRENGTH_2.png": "/gifted-pathway-app/static/media/GT_STRENGTH_2.cff1564d3de303b13d73.png",
+    "static/media/GT_STRENGTH_4.png": "/gifted-pathway-app/static/media/GT_STRENGTH_4.022ab6f36bc257b88961.png",
+    "static/media/ACCESS_HGT_GIA_2.png": "/gifted-pathway-app/static/media/ACCESS_HGT_GIA_2.d24b8ffb0c6c4b67c90e.png",
+    "static/media/HGT_GIA_4.png": "/gifted-pathway-app/static/media/HGT_GIA_4.63f3dd3d3ec568e12ed9.png",
+    "static/media/ACCESS_GT_STRENGTH_2.png": "/gifted-pathway-app/static/media/ACCESS_GT_STRENGTH_2.34f6325a7b16ddfc854c.png",
+    "static/media/ACCESS_HGT_GIA_3.png": "/gifted-pathway-app/static/media/ACCESS_HGT_GIA_3.ca882b17fe6688c80d43.png",
+    "static/media/ACCESS_HGT_GIA_4.png": "/gifted-pathway-app/static/media/ACCESS_HGT_GIA_4.55e0dc711c1c921e9005.png",
+    "static/media/HGT_STRENGTH_2.png": "/gifted-pathway-app/static/media/HGT_STRENGTH_2.5778fe7fd7612fb89c44.png",
+    "static/media/HGT_GIA_3.png": "/gifted-pathway-app/static/media/HGT_GIA_3.a0491a3c564ae30d0c1b.png",
+    "static/media/ACCESS_GT_GIA_3.png": "/gifted-pathway-app/static/media/ACCESS_GT_GIA_3.2d640088fd7e04de8d62.png",
+    "static/media/HGT_GIA_2.png": "/gifted-pathway-app/static/media/HGT_GIA_2.00ad7853b780eef884e8.png",
+    "static/media/ACCESS_GT_GIA_4.png": "/gifted-pathway-app/static/media/ACCESS_GT_GIA_4.bfb23071b1a543f28ebf.png",
+    "static/media/ACCESS_HGT_GIA_1.png": "/gifted-pathway-app/static/media/ACCESS_HGT_GIA_1.0ec8cf96a45773fce258.png",
     "index.html": "/gifted-pathway-app/index.html",
     "main.76abcefe.css.map": "/gifted-pathway-app/static/css/main.76abcefe.css.map",
-    "main.efb44eb0.js.map": "/gifted-pathway-app/static/js/main.efb44eb0.js.map"
+    "main.dcfac62b.js.map": "/gifted-pathway-app/static/js/main.dcfac62b.js.map"
   },
   "entrypoints": [
     "static/css/main.76abcefe.css",
-    "static/js/main.efb44eb0.js"
+    "static/js/main.dcfac62b.js"
   ]
 }
