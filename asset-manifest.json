@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/gifted-pathway-app/static/css/main.bbd272ef.css",
-    "main.js": "/gifted-pathway-app/static/js/main.f0ee5326.js",
+    "main.css": "/gifted-pathway-app/static/css/main.76abcefe.css",
+    "main.js": "/gifted-pathway-app/static/js/main.efb44eb0.js",
     "index.html": "/gifted-pathway-app/index.html",
-    "main.bbd272ef.css.map": "/gifted-pathway-app/static/css/main.bbd272ef.css.map",
-    "main.f0ee5326.js.map": "/gifted-pathway-app/static/js/main.f0ee5326.js.map"
+    "main.76abcefe.css.map": "/gifted-pathway-app/static/css/main.76abcefe.css.map",
+    "main.efb44eb0.js.map": "/gifted-pathway-app/static/js/main.efb44eb0.js.map"
   },
   "entrypoints": [
-    "static/css/main.bbd272ef.css",
-    "static/js/main.f0ee5326.js"
+    "static/css/main.76abcefe.css",
+    "static/js/main.efb44eb0.js"
   ]
 }
