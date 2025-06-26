@@ -6,7 +6,7 @@ const PathwayImage = ({ pathway }) => {
     return null;
   }
 
-  const imagePath = `pathway_images/${pathway}.png`;
+  const imagePath = `/pathway_images/${pathway}.png`;
 
   return (
     <div className="pathway-image-container">

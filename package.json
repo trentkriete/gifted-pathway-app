@@ -2,22 +2,19 @@
   "name": "gifted-pathway-client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://trentkriete.github.io/",
+  "homepage": "https://trentkriete.github.io/gifted-pathway-app",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "file-loader": "^6.2.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-scripts": "5.0.1",
+    "save-dev": "^0.0.1-security",
+    "url-loader": "^4.1.1",
     "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
   },
   "scripts": {
     "start": "react-scripts start",
