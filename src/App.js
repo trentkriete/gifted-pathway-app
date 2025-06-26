@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { questions, results } from './questions';
 import HomePage from './HomePage';
+import PathwayImage from './PathwayImage';
 
 function App() {
   const [quizStarted, setQuizStarted] = useState(false);
@@ -50,9 +51,11 @@ function App() {
 
     if (typeof currentQuestionId === 'string' && currentQuestionId.startsWith('RESULT_')) {
       const result = results[currentQuestionId];
+      const pathwayName = currentQuestionId.replace('RESULT_', '');
       return (
         <div>
           <h1>{result.pathway}</h1>
+          <PathwayImage pathway={pathwayName} />
           <h2>{result.title}</h2>
           <ul className='result-criteria'>
             {result.criteria.map((item, index) => <li key={index}>{item}</li>)}

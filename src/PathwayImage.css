@@ -1,0 +1,11 @@
+.pathway-image-container {
+  margin-top: 20px;
+}
+
+.pathway-image {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+}
