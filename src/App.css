@@ -64,6 +64,25 @@ button:hover {
     display: inline-block;
 }
 
+.result-container {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.result-left {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.result-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
 .home-page {
   display: flex;
   justify-content: center;

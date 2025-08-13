@@ -44,7 +44,7 @@ This document outlines the decision tree for the Gifted Pathways application.
 ---
 
 ### Question 6 (ID: 21)
-**Text:** Are the Observation and Achievement scores in the same academic area?
+**Text:** Is the Observation score also in [SUBJECT]?
 - **Yes** -> **Result: ACCESS GT with Strength Area: 1**
 - **No** -> **Result: ACCESS GT GIA: 1**
 
@@ -82,7 +82,7 @@ This document outlines the decision tree for the Gifted Pathways application.
 ---
 
 ### Question 11 (ID: 115)
-**Text:** Are the Achievement and Observation scores in the same academic area?
+**Text:** Is the Observation score also in [SUBJECT]?
 - **Yes** -> **Result: HGT with Strength Area: 1**
 - **No** -> **Result: HGT GIA: 5**
 

@@ -2,7 +2,7 @@
 const questions = [
     {
         id: 0,
-        text: "Does the student have data from the ACCESS test (for language acquisition)?",
+        text: "Does the student have data from the ACCESS test?",
         options: [
             { text: "Yes", next: 1 },
             { text: "No", next: 100 }
@@ -11,10 +11,10 @@ const questions = [
     // --- ACCESS PATHWAYS ---
     {
         id: 1,
-        text: "How many ACCESS test scores does the student have?",
+        text: "Does the student have two or more ACCESS test scores?",
         options: [
-            { text: "One", next: 2 },
-            { text: "Two or more", next: 50 }
+            { text: "Yes", next: 50 },
+            { text: "No", next: 2 }
         ]
     },
     // --- 1 ACCESS Score ---
@@ -29,27 +29,95 @@ const questions = [
     // --- 1 ACCESS Score -> HGT Path ---
     {
         id: 10,
-        text: "In addition to the ACCESS and Cognitive scores, what other data is available?",
+        text: "Is there an Observation score?",
         options: [
-            { text: "An Observation score", next: "RESULT_ACCESS_HGT_GIA_3" },
-            { text: "An Achievement score", next: "RESULT_ACCESS_HGT_GIA_4" },
-            { text: "Anecdotal data indicating giftedness", next: "RESULT_ACCESS_HGT_GIA_2" }
+            { text: "Yes", next: "RESULT_ACCESS_HGT_GIA_3" },
+            { text: "No", next: 11 }
+        ]
+    },
+    {
+        id: 11,
+        text: "Is there an Achievement score?",
+        options: [
+            { text: "Yes", next: "RESULT_ACCESS_HGT_GIA_4" },
+            { text: "No", next: 12 }
+        ]
+    },
+    {
+        id: 12,
+        text: "Is there anecdotal data indicating giftedness?",
+        options: [
+            { text: "Yes", next: "RESULT_ACCESS_HGT_GIA_2" },
+            { text: "No", next: "RESULT_INCONCLUSIVE_NEEDS_ANECDOTAL" }
         ]
     },
     // --- 1 ACCESS Score -> GT Path ---
     {
         id: 20,
-        text: "What combination of scores does the student have, in addition to the single ACCESS score?",
+        text: "Does the student have an Observation score?",
         options: [
-            { text: "Two Achievement scores in different academic areas", next: "RESULT_ACCESS_GT_GIA_3" },
-            { text: "Two Achievement scores in the same academic area", next: "RESULT_ACCESS_GT_STRENGTH_2" },
-            { text: "One Observation score and one Achievement score", next: 21 },
-            { text: "One Observation score and anecdotal data", next: "RESULT_ACCESS_GT_GIA_2" }
+            { text: "Yes", next: 27 },
+            { text: "No", next: 28 }
+        ]
+    },
+    {
+        id: 22,
+        text: "Are the two Achievement scores in the same academic area?",
+        options: [
+            { text: "Yes", next: "RESULT_ACCESS_GT_STRENGTH_2" },
+            { text: "No", next: "RESULT_ACCESS_GT_GIA_3" }
+        ]
+    },
+    {
+        id: 23,
+        text: "Does the student have an Observation score?",
+        options: [
+            { text: "Yes", next: 27 },
+            { text: "No", next: "RESULT_INCONCLUSIVE_NEEDS_ANECDOTAL" }
+        ]
+    },
+    {
+        id: 24,
+        text: "Do they have one Observation score and anecdotal data?",
+        options: [
+            { text: "Yes", next: "RESULT_ACCESS_GT_GIA_2" },
+            { text: "No", next: "RESULT_INCONCLUSIVE_NEEDS_ANECDOTAL" }
+        ]
+    },
+    {
+        id: 27,
+        type: 'subject-multiselect',
+        text: "Select the subject(s) with Achievement scores:",
+        subjects: ["Literacy", "Math", "Science", "Social Studies"],
+        onTwoOrMore: "RESULT_ACCESS_GT_STRENGTH_2",
+        onTwoDifferent: "RESULT_ACCESS_GT_GIA_3",
+        nextIfNotTwoOrMore: 21,
+        sameAreaYesResult: "RESULT_ACCESS_GT_STRENGTH_1",
+        sameAreaNoResult: "RESULT_ACCESS_GT_GIA_1",
+        noAchievementNext: 26
+    },
+    {
+        id: 28,
+        type: 'subject-multiselect',
+        text: "Select the subject(s) with Achievement scores:",
+        subjects: ["Literacy", "Math", "Science", "Social Studies"],
+        onTwoOrMore: "RESULT_ACCESS_GT_STRENGTH_2",
+        onTwoDifferent: "RESULT_ACCESS_GT_GIA_3",
+        nextIfNotTwoOrMore: "RESULT_INCONCLUSIVE_NEEDS_ANECDOTAL",
+        noAchievementNext: "RESULT_INCONCLUSIVE_NEEDS_ANECDOTAL"
+    },
+    
+    {
+        id: 26,
+        text: "Does the student have anecdotal data indicating giftedness?",
+        options: [
+            { text: "Yes", next: "RESULT_ACCESS_GT_GIA_2" },
+            { text: "No", next: "RESULT_INCONCLUSIVE_NEEDS_ANECDOTAL" }
         ]
     },
     {
         id: 21,
-        text: "Are the Observation and Achievement scores in the same academic area?",
+        text: "Is the Observation score also in [SUBJECT]?",
         options: [
             { text: "Yes", next: "RESULT_ACCESS_GT_STRENGTH_1" },
             { text: "No", next: "RESULT_ACCESS_GT_GIA_1" }
@@ -84,18 +152,69 @@ const questions = [
     // --- NO ACCESS -> HGT Path ---
     {
         id: 110,
-        text: "What combination of scores does the student have, in addition to the Cognitive score?",
+        text: "Does the student have an Observation score?",
         options: [
-            { text: "One Achievement score and one Observation score", next: 115 },
-            { text: "Two Achievement scores", next: 116 },
-            { text: "One Achievement score and anecdotal data", next: "RESULT_HGT_GIA_2" },
-            { text: "One Observation score and anecdotal data", next: "RESULT_HGT_GIA_3" },
-            { text: "A second Cognitive score and anecdotal data", next: "RESULT_HGT_GIA_1" }
+            { text: "Yes", next: 118 },
+            { text: "No", next: 119 }
+        ]
+    },
+    {
+        id: 119,
+        type: 'subject-multiselect',
+        text: "Select the subject(s) with Achievement scores:",
+        subjects: ["Literacy", "Math", "Science", "Social Studies"],
+        onTwoOrMore: "RESULT_HGT_STRENGTH_2",
+        onTwoDifferent: "RESULT_HGT_GIA_4",
+        nextIfNotTwoOrMore: 112,
+        noAchievementNext: 112
+    },
+    {
+        id: 118,
+        type: 'subject-multiselect',
+        text: "Select the subject(s) with Achievement scores:",
+        subjects: ["Literacy", "Math", "Science", "Social Studies"],
+        onTwoOrMore: "RESULT_HGT_STRENGTH_2",
+        nextIfNotTwoOrMore: 115,
+        sameAreaYesResult: "RESULT_HGT_STRENGTH_1",
+        sameAreaNoResult: "RESULT_HGT_GIA_5",
+        noAchievementNext: 113
+    },
+    
+    {
+        id: 111,
+        text: "Do they have two Achievement scores?",
+        options: [
+            { text: "Yes", next: 116 },
+            { text: "No", next: 112 }
+        ]
+    },
+    {
+        id: 112,
+        text: "Do they have one Achievement score and anecdotal data?",
+        options: [
+            { text: "Yes", next: "RESULT_HGT_GIA_2" },
+            { text: "No", next: 113 }
+        ]
+    },
+    {
+        id: 113,
+		text: "Is there anecdotal data indicating giftedness?",
+        options: [
+            { text: "Yes", next: "RESULT_HGT_GIA_3" },
+            { text: "No", next: 114 }
+        ]
+    },
+    {
+        id: 114,
+        text: "Do they have a second Cognitive score and anecdotal data?",
+        options: [
+            { text: "Yes", next: "RESULT_HGT_GIA_1" },
+            { text: "No", next: "RESULT_INCONCLUSIVE_NEEDS_ANECDOTAL" }
         ]
     },
     {
         id: 115,
-        text: "Are the Achievement and Observation scores in the same academic area?",
+        text: "Is the Observation score also in [SUBJECT]?",
         options: [
             { text: "Yes", next: "RESULT_HGT_STRENGTH_1" },
             { text: "No", next: "RESULT_HGT_GIA_5" }
@@ -114,18 +233,30 @@ const questions = [
         id: 150,
         text: "Is there anecdotal data indicating giftedness?",
         options: [
-            { text: "Yes", next: 160 },
+            { text: "Yes", next: 163 },
             { text: "No", next: 180 }
         ]
     },
     {
-        id: 160,
-        text: "What combination of scores does the student have (in addition to anecdotal data)?",
+        id: 163,
+        text: "Does the student have an Observation score?",
         options: [
-            { text: "Two Achievement scores", next: 161 },
-            { text: "One Achievement score and one Observation score", next: 162 }
+            { text: "Yes", next: 165 },
+            { text: "No", next: "RESULT_INCONCLUSIVE_NEEDS_ANECDOTAL" }
         ]
     },
+    {
+        id: 165,
+        type: 'subject-multiselect',
+        text: "Select the subject(s) with Achievement scores:",
+        subjects: ["Literacy", "Math", "Science", "Social Studies"],
+        onTwoOrMore: "RESULT_GT_STRENGTH_4",
+        nextIfNotTwoOrMore: 162,
+        sameAreaYesResult: "RESULT_GT_STRENGTH_3",
+        sameAreaNoResult: "RESULT_GT_GIA_2",
+        noAchievementNext: "RESULT_INCONCLUSIVE_NEEDS_ANECDOTAL"
+    },
+    
     {
         id: 161,
         text: "Are the two Achievement scores in the same academic area?",
@@ -144,11 +275,18 @@ const questions = [
     },
     {
         id: 180,
-        text: "What combination of scores does the student have?",
+        text: "Do they have one Observation score and two Achievement scores, all in the same academic area?",
         options: [
-            { text: "One Observation score and two Achievement scores, all in the same academic area", next: "RESULT_GT_STRENGTH_1" },
-            { text: "Three Achievement scores in the same academic domain (from at least two different assessments)", next: "RESULT_GT_STRENGTH_2" },
-            { text: "Other combination", next: "RESULT_INCONCLUSIVE_NEEDS_ANECDOTAL" }
+            { text: "Yes", next: "RESULT_GT_STRENGTH_1" },
+            { text: "No", next: 181 }
+        ]
+    },
+    {
+        id: 181,
+        text: "Do they have three Achievement scores in the same academic domain (from at least two different assessments)?",
+        options: [
+            { text: "Yes", next: "RESULT_GT_STRENGTH_2" },
+            { text: "No", next: "RESULT_INCONCLUSIVE_NEEDS_ANECDOTAL" }
         ]
     }
 ];
