@@ -72,6 +72,30 @@ function App() {
       const displayTitle = isStrengthResult && strengthAreas && strengthAreas.length > 0
         ? `${baseTitle}: ${strengthAreas.join(', ')}`
         : result.title;
+
+      let modifiedCriteria = [...result.criteria];
+
+      // Conditionally add anecdotal criteria for RESULT_GT_GIA_1
+      if (currentQuestionId === 'RESULT_GT_GIA_1') {
+        const indexOfQ150InHistory = history.indexOf(150);
+        if (indexOfQ150InHistory !== -1 && indexOfQ150InHistory < answers.length) {
+          const answerFor150 = answers[indexOfQ150InHistory];
+          // Check if the answer for question 150 (anecdotal) was "Yes"
+          if (answerFor150 && answerFor150.text === "Yes") {
+            modifiedCriteria.push("Anecdotal data indicating giftedness");
+          }
+        }
+
+        const indexOfQ163InHistory = history.indexOf(163);
+        if (indexOfQ163InHistory !== -1 && indexOfQ163InHistory < answers.length) {
+          const answerFor163 = answers[indexOfQ163InHistory];
+          // Check if the answer for question 163 (observation) was "Yes"
+          if (answerFor163 && answerFor163.text === "Yes") {
+            modifiedCriteria.push("1 Observation score");
+          }
+        }
+      }
+
       return (
         <div>
           <h1>Identification Outcome</h1>
@@ -79,14 +103,18 @@ function App() {
             <div className="result-left">
               <h2>{displayTitle}</h2>
               <ul className='result-criteria'>
-                {result.criteria.map((item, index) => <li key={index}>{item}</li>)}
+                {modifiedCriteria.map((item, index) => <li key={index}>{item}</li>)}
               </ul>
               <div>
                 <button onClick={handleStartOver}>Start Over</button>
               </div>
             </div>
             <div className="result-right">
-              <PathwayImage pathway={pathwayName} />
+              {pathwayName === 'INCONCLUSIVE_NEEDS_ANECDOTAL' ? (
+                <div>No image available for this pathway.</div>
+              ) : (
+                <PathwayImage pathway={pathwayName} />
+              )}
             </div>
           </div>
         </div>
@@ -119,7 +147,11 @@ function App() {
           setSubjectFollowupQueue(rest);
           setHistory([...history, `SUBJ2+|${nextSubject}|${onTwoOrMore}|${nextIfNotTwoOrMore}|${multiselectId}`]);
         } else {
-          if (strengthAreas.length > 0) {
+          const msQuestion = questions.find(q => String(q.id) === String(multiselectId));
+          if (originalSelectedSubjects.length === 2 && msQuestion?.onTwoDifferent) {
+            console.log('Transitioning to onTwoDifferent:', msQuestion.onTwoDifferent);
+            setHistory([...history, msQuestion.onTwoDifferent]);
+          } else if (strengthAreas.length > 0) {
             setHistory([...history, onTwoOrMore]);
           } else {
             // After finishing 2+ checks with no strengths found,
